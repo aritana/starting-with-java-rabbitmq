@@ -1,10 +1,10 @@
-package br.aritana.consumerservice;
+package br.aritana.consumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConsumerServiceApplicationTests {
+class ConsumerApplicationTests {
 
     @Test
     void contextLoads() {

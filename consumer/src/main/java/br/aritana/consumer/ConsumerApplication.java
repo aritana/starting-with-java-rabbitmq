@@ -1,13 +1,13 @@
-package br.aritana.consumerservice;
+package br.aritana.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ConsumerServiceApplication {
+public class ConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerServiceApplication.class, args);
+        SpringApplication.run(ConsumerApplication.class, args);
     }
 
 }
