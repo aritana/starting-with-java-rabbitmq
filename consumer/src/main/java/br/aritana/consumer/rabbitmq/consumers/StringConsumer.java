@@ -1,5 +1,6 @@
 package br.aritana.consumer.rabbitmq.consumers;
 
+import dto.ProductDTO;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

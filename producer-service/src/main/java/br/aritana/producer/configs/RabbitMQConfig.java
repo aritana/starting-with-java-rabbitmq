@@ -9,6 +9,8 @@ import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static br.aritana.commons.constants.RabbitMQConstants.*;
+
 /**
  * AMQP topology and {@link RabbitAdmin} setup.
  * <p>
@@ -23,10 +25,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class RabbitMQConfig {
-
-    public static final String EXCHANGE_MARKETPLACE_DIRECT = "marketplace.direct";
-    public static final String QUEUE_PRODUCT_LOG = "product.log";
-    public static final String ROUTING_KEY_PRODUCT_LOG = "product.log";
 
     @Bean
     public Queue productLogQueue() {

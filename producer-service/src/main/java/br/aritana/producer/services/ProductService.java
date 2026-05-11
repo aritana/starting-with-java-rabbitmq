@@ -1,5 +1,6 @@
 package br.aritana.producer.services;
 
+import dto.ProductDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -11,13 +12,11 @@ import static br.aritana.commons.constants.RabbitMQConstants.ROUTING_KEY_PRODUCT
 @Log4j2
 @Service
 @RequiredArgsConstructor
-public class StringService {
+public class ProductService {
     private final RabbitTemplate rabbitTemplate;
 
-    public void produce(String message) {
-        log.info("Received Messsage " + message);
+    private void createProduct(ProductDTO dto){
+        log.info("Sending a message to exchange " +  dto.toString());
         rabbitTemplate.convertAndSend(EXCHANGE_MARKETPLACE_DIRECT, ROUTING_KEY_PRODUCT_LOG, message);
     }
-
-
 }

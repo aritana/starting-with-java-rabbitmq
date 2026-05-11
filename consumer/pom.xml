@@ -54,6 +54,11 @@
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>br.aritana</groupId>
+            <artifactId>commons</artifactId>
+            <version>0.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>

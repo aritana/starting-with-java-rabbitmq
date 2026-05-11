@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.aritana</groupId>
-    <artifactId>producer-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>rabbitmq</name>
-    <description>rabbitmq</description>
+    <artifactId>commons</artifactId>
+    <version>0.0.2</version>
+    <name>commons</name>
+    <description>commons</description>
     <url/>
     <licenses>
         <license/>
@@ -54,11 +54,6 @@
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>br.aritana</groupId>
-            <artifactId>commons</artifactId>
-            <version>0.0.2</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -67,6 +62,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!-- Library module: plain JAR so dependents resolve classes (not BOOT-INF-only fat JAR). -->
+                    <skip>true</skip>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
