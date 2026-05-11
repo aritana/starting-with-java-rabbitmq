@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: producer-service
+
+  rabbitmq:
+    host: localhost
+    port: 5673
+    username: curso
+    password: curso123
+    # Fail TCP/connect attempts quickly during bootstrap instead of hanging (Duration).
+    connection-timeout: 10s
+    template:
+      # When true, unroutable messages can be detected via ReturnCallback; enable with mandatory sends.
+      mandatory: false
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.amqp: INFO
+    org.springframework.amqp.rabbit.connection: INFO
+    org.springframework.amqp.rabbit.core.RabbitAdmin: DEBUG
+    com.rabbitmq: WARN

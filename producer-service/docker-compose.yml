@@ -1,0 +1,21 @@
+services:
+  rabbitmq_curso:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_curso
+    hostname: rabbitmq_curso
+    ports:
+      - "5673:5672"   # AMQP (clientes / aplicações)
+      - "15673:15672" # Management UI (navegador)
+    environment:
+      RABBITMQ_DEFAULT_USER: curso
+      RABBITMQ_DEFAULT_PASS: curso123
+    volumes:
+      - rabbitmq_curso_data:/var/lib/rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  rabbitmq_curso_data:
