@@ -15,8 +15,8 @@ import static br.aritana.commons.constants.RabbitMQConstants.ROUTING_KEY_PRODUCT
 public class ProductService {
     private final RabbitTemplate rabbitTemplate;
 
-    private void createProduct(ProductDTO dto){
+    public void createProduct(ProductDTO dto){
         log.info("Sending a message to exchange " +  dto.toString());
-        rabbitTemplate.convertAndSend(EXCHANGE_MARKETPLACE_DIRECT, ROUTING_KEY_PRODUCT_LOG, message);
+        rabbitTemplate.convertAndSend(EXCHANGE_MARKETPLACE_DIRECT, ROUTING_KEY_PRODUCT_LOG, dto);
     }
 }
